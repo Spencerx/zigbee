@@ -1,0 +1,35 @@
+/**
+ * Copyright (c) 2016-2017 by the respective copyright holders.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.eclipse.smarthome.zigbee.dongle.cc2531.frame;
+
+import java.util.Arrays;
+
+import org.eclipse.smarthome.zigbee.ZigBeeApsFrame;
+import org.eclipse.smarthome.zigbee.dongle.cc2531.network.packet.ZToolPacket;
+import org.eclipse.smarthome.zigbee.zdo.ZdoCommandType;
+
+/**
+ *
+ * @author Chris Jackson
+ *
+ */
+public class ZdoEndDeviceAnnounce extends TiDongleReceivePacket {
+
+    public static ZigBeeApsFrame create(ZToolPacket packet) {
+        ZigBeeApsFrame apsFrame = new ZigBeeApsFrame();
+        apsFrame.setCluster(ZdoCommandType.DEVICE_ANNOUNCE.getClusterId());
+        apsFrame.setDestinationEndpoint(0);
+        apsFrame.setSourceAddress(packet.getPacket()[4] + (packet.getPacket()[5] << 8));
+        apsFrame.setSourceEndpoint(0);
+        apsFrame.setProfile(0);
+        apsFrame.setPayload(Arrays.copyOfRange(packet.getPacket(), 5, packet.getPacket().length - 1));
+
+        return apsFrame;
+    }
+
+}

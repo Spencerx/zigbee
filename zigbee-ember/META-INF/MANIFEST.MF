@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-ManifestVersion: 2
+Bundle-Name: ZigBee Ember Binding
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: org.eclipse.smarthome.binding.zigbee.ember;singleton:=true
+Bundle-Vendor: Eclipse.org/SmartHome
+Bundle-Version: 0.10.0.qualifier
+Export-Package: 
+ org.openhab.binding.zigbee.ember,
+ org.openhab.binding.zigbee.ember.handler
+Import-Package: gnu.io,
+ org.eclipse.jdt.annotation;resolution:=optional,
+ org.eclipse.smarthome.binding.zigbee,
+ org.eclipse.smarthome.binding.zigbee.discovery,
+ org.eclipse.smarthome.binding.zigbee.handler,
+ org.eclipse.smarthome.config.core,
+ org.eclipse.smarthome.config.discovery,
+ org.eclipse.smarthome.core.i18n,
+ org.eclipse.smarthome.core.library.types,
+ org.eclipse.smarthome.core.thing,
+ org.eclipse.smarthome.core.thing.binding,
+ org.eclipse.smarthome.core.thing.binding.builder,
+ org.eclipse.smarthome.core.thing.binding.firmware,
+ org.eclipse.smarthome.core.thing.type,
+ org.eclipse.smarthome.core.types,
+ org.eclipse.smarthome.zigbee,
+ org.eclipse.smarthome.zigbee.serialization,
+ org.eclipse.smarthome.zigbee.transport,
+ org.osgi.framework,
+ org.slf4j
+Service-Component: OSGI-INF/*.xml

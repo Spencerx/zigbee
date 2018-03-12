@@ -1,0 +1,45 @@
+/**
+ * Copyright (c) 2016-2017 by the respective copyright holders.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.eclipse.smarthome.zigbee.zcl.clusters.levelcontrol;
+
+import org.eclipse.smarthome.zigbee.zcl.ZclCommand;
+import org.eclipse.smarthome.zigbee.zcl.protocol.ZclCommandDirection;
+
+/**
+ * Stop 2 Command value object class.
+ * <p>
+ * Cluster: <b>Level Control</b>. Command is sent <b>TO</b> the server.
+ * This command is a <b>specific</b> command used for the Level Control cluster.
+ * <p>
+ * This cluster provides an interface for controlling a characteristic of a device that
+ * can be set to a level, for example the brightness of a light, the degree of closure of
+ * a door, or the power output of a heater.
+ * <p>
+ * Code is auto-generated. Modifications may be overwritten!
+ */
+public class Stop2Command extends ZclCommand {
+    /**
+     * Default constructor.
+     */
+    public Stop2Command() {
+        genericCommand = false;
+        clusterId = 8;
+        commandId = 7;
+        commandDirection = ZclCommandDirection.CLIENT_TO_SERVER;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder builder = new StringBuilder(15);
+        builder.append("Stop2Command [");
+        builder.append(super.toString());
+        builder.append(']');
+        return builder.toString();
+    }
+
+}
